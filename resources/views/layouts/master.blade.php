@@ -40,44 +40,33 @@
                     <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
                     <span class="nav-text">Classes</span>
                 </a>
+                <a class="nav-link" href="{{route('departments.index')}}">
+                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-text">Departments</span>
+                </a>
+                <a class="nav-link" href="{{route('designations.index')}}">
+                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-text">Designations</span>
+                </a>
+                <a class="nav-link" href="{{route('groups.index')}}">
+                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-text">Groups</span>
+                </a>
+                <a class="nav-link" href="{{route('sections.index')}}">
+                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-text">Sections</span>
+                </a>
+                <a class="nav-link" href="{{route('shifts.index')}}">
+                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-text">Shifts</span>
+                </a>
 
 
-                <a class="nav-link" href="profile.html">
-                    <span class="nav-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
-                    <span class="nav-text">Profile</span>
-                </a>
-                <a class="nav-link" href="charts.html">
-                    <span class="nav-icon"><i class="bi bi-bar-chart-line" aria-hidden="true"></i></span>
-                    <span class="nav-text">Charts</span>
-                </a>
-                <a class="nav-link" href="tables.html">
-                    <span class="nav-icon"><i class="bi bi-table" aria-hidden="true"></i></span>
-                    <span class="nav-text">Tables</span>
-                </a>
-                <a class="nav-link" href="forms.html">
-                    <span class="nav-icon"><i class="bi bi-ui-checks-grid" aria-hidden="true"></i></span>
-                    <span class="nav-text">Forms</span>
-                </a>
-                <a class="nav-link" href="components.html">
-                    <span class="nav-icon"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></span>
-                    <span class="nav-text">Components</span>
-                </a>
-                <a class="nav-link" href="alerts.html">
-                    <span class="nav-icon"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></span>
-                    <span class="nav-text">Alerts</span>
-                </a>
-                <a class="nav-link" href="modals.html">
-                    <span class="nav-icon"><i class="bi bi-window-stack" aria-hidden="true"></i></span>
-                    <span class="nav-text">Modals</span>
-                </a>
-                <a class="nav-link" href="settings.html">
-                    <span class="nav-icon"><i class="bi bi-gear" aria-hidden="true"></i></span>
-                    <span class="nav-text">Settings</span>
-                </a>
-                <a class="nav-link" href="blank.html">
-                    <span class="nav-icon"><i class="bi bi-file-earmark" aria-hidden="true"></i></span>
-                    <span class="nav-text">Blank Page</span>
-                </a>
+
+
+
+
+
             </nav>
 
             <div class="sidebar-user">
