@@ -7,7 +7,7 @@
             <div class="page-heading-copy">
                 <span class="page-icon"><i class="bi bi-person" aria-hidden="true"></i></span>
                 <div>
-                    <h1 class="h3 mb-1">Add Department</h1>
+                    <h1 class="h3 mb-1">Add Designations</h1>
                 </div>
             </div>
 
@@ -18,23 +18,10 @@
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
-                        <label> Department Name <span class="text-danger">*</span></label>
+                        <label> Designations Name <span class="text-danger">*</span></label>
                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                             value="{{ old('name') }}" required>
                         @error('name')<span class="invalid-feedback">{{ $message }}</span>@enderror
-                    </div>
-                    <div class="form-group">
-                        <label>Section</label>
-                        <input type="text" name="section" class="form-control" value="{{ old('section') }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Teacher</label>
-                        <select name="teacher_id" class="form-control">
-                            <option value="">-- Select Teacher --</option>
-                            @foreach($teachers as $teacher)
-                                <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
-                            @endforeach
-                        </select>
                     </div>
                 </div>
                 <div class="card-footer">

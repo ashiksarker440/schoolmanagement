@@ -7,12 +7,12 @@
             <div class="page-heading-copy">
                 <span class="page-icon"><i class="bi bi-users" aria-hidden="true"></i></span>
                 <div>
-                    <h1 class="h3 mb-1">All groups</h1>
+                    <h1 class="h3 mb-1">All Groups</h1>
                 </div>
             </div>
             <div class="heading-actions">
                 <a href="{{ route('groups.create') }}" class="btn btn-outline-secondary btn-sm" type="button">
-                    <i class="fas fa-plus"></i> Add Department</a>
+                    <i class="fas fa-plus"></i> Add Groups</a>
             </div>
         </div>
 
@@ -21,23 +21,23 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>ID</th>
                             <th>groups</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($groups as $department)
+                        @forelse($groups as $groups)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $department->name }}</td>
-                                
+                                <td>{{ $groups->id }}</td>
+                                <td>{{ $groups->name }}</td>
+
                                 <td>
-                                    <a href="{{ route('groups.edit', $department) }}" class="btn btn-sm btn-warning">
+                                    <a href="{{ route('groups.edit', $groups) }}" class="btn btn-sm btn-warning">
                                         <i class="bi bi-pencil"></i>
                                     </a>
-                                    <form action="{{ route('groups.destroy', $department) }}" method="POST" class="d-inline"
-                                        onsubmit="return confirm('Delete this department?')">
+                                    <form action="{{ route('groups.destroy', $groups) }}" method="POST" class="d-inline"
+                                        onsubmit="return confirm('Delete this groups?')">
                                         @csrf @method('DELETE')
                                         <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                     </form>

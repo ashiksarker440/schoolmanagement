@@ -21,7 +21,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>ID</th>
                             <th>departments</th>
                             <th>Actions</th>
                         </tr>
@@ -29,7 +29,7 @@
                     <tbody>
                         @forelse($departments as $department)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $department->id }}</td>
                                 <td>{{ $department->name }}</td>
                                 
                                 <td>

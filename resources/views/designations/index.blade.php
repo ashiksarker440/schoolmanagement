@@ -12,7 +12,7 @@
             </div>
             <div class="heading-actions">
                 <a href="{{ route('designations.create') }}" class="btn btn-outline-secondary btn-sm" type="button">
-                    <i class="fas fa-plus"></i> Add Department</a>
+                    <i class="fas fa-plus"></i> Add Designations</a>
             </div>
         </div>
 
@@ -21,23 +21,23 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>ID</th>
                             <th>designations</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($designations as $department)
+                        @forelse($designations as $Designations)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $department->name }}</td>
-                                
+                                <td>{{ $Designations->name }}</td>
+
                                 <td>
-                                    <a href="{{ route('designations.edit', $department) }}" class="btn btn-sm btn-warning">
+                                    <a href="{{ route('designations.edit', $Designations) }}" class="btn btn-sm btn-warning">
                                         <i class="bi bi-pencil"></i>
                                     </a>
-                                    <form action="{{ route('designations.destroy', $department) }}" method="POST" class="d-inline"
-                                        onsubmit="return confirm('Delete this department?')">
+                                    <form action="{{ route('designations.destroy', $Designations) }}" method="POST"
+                                        class="d-inline" onsubmit="return confirm('Delete this Designations?')">
                                         @csrf @method('DELETE')
                                         <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                     </form>

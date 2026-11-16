@@ -40,6 +40,10 @@
                     <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
                     <span class="nav-text">Classes</span>
                 </a>
+                <a class="nav-link" href="{{route('teachers.index')}}">
+                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-text">Teachers</span>
+                </a>
                 <a class="nav-link" href="{{route('departments.index')}}">
                     <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
                     <span class="nav-text">Departments</span>
