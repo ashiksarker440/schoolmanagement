@@ -9,12 +9,20 @@ return new class extends Migration {
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('student_name');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('class_id')->constrained('classes')->onDelete('cascade');
-            $table->string('roll_number')->unique();
-            $table->string('guardian_name');
-            $table->string('guardian_phone');
+            $table->string('name');
+            $table->integer('gender')->unsigned()->nullable();
+            $table->integer('religion')->unsigned()->nullable();
+            $table->string('birth_certificate')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('blood_group')->nullable();
+            $table->string('father_name')->nullable();
+            $table->string('father_profession')->nullable();
+            $table->string('father_phone')->nullable();
+            $table->string('mother_name')->nullable();
+            $table->string('mother_profession')->nullable();
+            $table->string('mother_phone')->nullable();
+            $table->string('guardian_name')->nullable();
+            $table->string('guardian_phone')->nullable();
             $table->date('date_of_birth');
             $table->text('address')->nullable();
             $table->timestamps();

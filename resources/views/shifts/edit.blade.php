@@ -24,20 +24,12 @@
                         @error('name')<span class="invalid-feedback">{{ $message }}</span>@enderror
                     </div>
                     <div class="form-group">
-                        <label>Section</label>
-                        <input type="text" name="section" class="form-control"
-                            value="{{ old('section', $shift->section) }}">
+                        <label>Start Time <span class="text-danger">*</span></label>
+                        <input type="time" name="start_time" class="form-control" value="{{ old('start_time', $shift->start_time) }}" required>
                     </div>
                     <div class="form-group">
-                        <label>Teacher</label>
-                        <select name="teacher_id" class="form-control">
-                            <option value="">-- Select Teacher --</option>
-                            @foreach($teachers as $teacher)
-                                <option value="{{ $teacher->id }}" @selected($shift->teacher_id == $teacher->id)>
-                                    {{ $teacher->name }}
-                                </option>
-                            @endforeach
-                        </select>
+                        <label>End Time <span class="text-danger">*</span></label>
+                        <input type="time" name="end_time" class="form-control" value="{{ old('end_time', $shift->end_time) }}" required>
                     </div>
                 </div>
                 <div class="card-footer">

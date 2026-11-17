@@ -24,6 +24,14 @@
                         @error('name')<span class="invalid-feedback">{{ $message }}</span>@enderror
                     </div>
                 </div>
+                <div class="form-group">
+                    <label>Start Time <span class="text-danger">*</span></label>
+                    <input type="time" name="start_time" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>End Time <span class="text-danger">*</span></label>
+                    <input type="time" name="end_time" class="form-control" required>
+                </div>
                 <div class="card-footer">
                     <button class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
                     <a href="{{ route('shifts.index') }}" class="btn btn-secondary">Cancel</a>

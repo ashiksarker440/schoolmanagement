@@ -10,8 +10,10 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->renameColumn('student_name', 'name');
+        Schema::create('student_sessions', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->timestamps();
         });
     }
 
@@ -20,8 +22,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::table('students', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('student_sessions');
     }
 };

@@ -65,12 +65,10 @@
                     <span class="nav-text">Shifts</span>
                 </a>
 
-
-
-
-
-
-
+                <a class="nav-link" href="{{route('sessions.index')}}">
+                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-text">Sessions</span>
+                </a>
             </nav>
 
             <div class="sidebar-user">

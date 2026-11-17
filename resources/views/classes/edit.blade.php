@@ -23,22 +23,6 @@
                             value="{{ old('name', $class->name) }}" required>
                         @error('name')<span class="invalid-feedback">{{ $message }}</span>@enderror
                     </div>
-                    <div class="form-group">
-                        <label>Section</label>
-                        <input type="text" name="section" class="form-control"
-                            value="{{ old('section', $class->section) }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Teacher</label>
-                        <select name="teacher_id" class="form-control">
-                            <option value="">-- Select Teacher --</option>
-                            @foreach($teachers as $teacher)
-                                <option value="{{ $teacher->id }}" @selected($class->teacher_id == $teacher->id)>
-                                    {{ $teacher->name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary"><i class="fas fa-save"></i> Update</button>

@@ -20,8 +20,9 @@
             <div class="panel-header">
                 <div class="d-flex flex-wrap gap-2">
                     <form method="GET" class="d-flex flex-wrap align-items-center gap-2">
-                        <input class="form-control form-control-sm table-search" type="search" placeholder="Search students"
-                            data-table-search="studentsTable" aria-label="Search students" value="{{ request('search') }}">
+                        <input class="form-control form-control-sm table-search" type="search" name="search"
+                            placeholder="Search students" data-table-search="studentsTable" aria-label="Search students"
+                            value="{{ request('search') }}">
                         <select name="class_id" class="form-control w-auto">
                             <option value="">All Classes</option>
                             @foreach($classes as $class)
@@ -36,15 +37,20 @@
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table align-middle mb-0" id="usersTable" data-searchable-table>
+                <table class="table align-middle mb-0" id="studentsTable" data-searchable-table>
                     <thead>
                         <tr>
-                            <th> # </th>
-                            <th>Roll</th>
+                            <th>ID</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Class</th>
+                            <th>Father</th>
+                            <th>Mother</th>
                             <th>Guardian</th>
+                            <th>Class</th>
+                            <th>Section</th>
+                            <th>Shift</th>
+                            <th>Group</th>
+                            <th>Session</th>
+                            <th>Roll</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -52,11 +58,16 @@
                         @forelse($students as $student)
                             <tr>
                                 <td>{{ $loop->iteration + ($students->currentPage() - 1) * $students->perPage() }}</td>
-                                <td><span class="badge badge-secondary">{{ $student->roll_number }}</span></td>
-                                <td>{{ $student->user->name }}</td>
-                                <td>{{ $student->user->email }}</td>
-                                <td>{{ $student->classRoom->name ?? '-' }} {{ $student->classRoom->section ?? '' }}</td>
-                                <td>{{ $student->guardian_name }} <br><small>{{ $student->guardian_phone }}</small></td>
+                                <td>{{ $student->name }}</td>
+                                <td>{{ $student->father_name ?: '-' }}<br><small>{{ $student->father_phone }}</small></td>
+                                <td>{{ $student->mother_name ?: '-' }}<br><small>{{ $student->mother_phone }}</small></td>
+                                <td>{{ $student->guardian_name ?: '-' }}<br><small>{{ $student->guardian_phone }}</small></td>
+                                <td>{{ $student->enrollment?->classRoom?->name ?? '-' }}</td>
+                                <td>{{ $student->enrollment?->section?->name ?? '-' }}</td>
+                                <td>{{ $student->enrollment?->shift?->name ?? '-' }}</td>
+                                <td>{{ $student->enrollment?->group?->name ?? '-' }}</td>
+                                <td>{{ $student->enrollment?->studentSession?->name ?? '-' }}</td>
+                                <td><span class="badge badge-secondary">{{ $student->enrollment?->roll_no ?? '-' }}</span></td>
                                 <td>
                                     <a href="{{ route('students.show', $student) }}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
@@ -73,7 +84,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7" class="text-center text-muted py-4">No students found.</td>
+                                <td colspan="12" class="text-center text-muted py-4">No students found.</td>
                             </tr>
                         @endforelse
                     </tbody>

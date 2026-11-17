@@ -10,13 +10,11 @@ return new class extends Migration {
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('class_id')->constrained('classes')->onDelete('cascade');
-            $table->integer('capacity')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
 
 
-            $table->unique(['class_id', 'name']);
+            $table->unique(['name']);
         });
     }
 

@@ -10,8 +10,6 @@ return new class extends Migration {
         Schema::create('classes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('section')->nullable();
-            $table->foreignId('teacher_id')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });
     }

@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -11,12 +10,10 @@ use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\SectionController;
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\StudentSessionController;
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('classes', ClassRoomController::class);
@@ -28,6 +25,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('shifts', ShiftController::class);
     Route::resource('groups', GroupController::class);
     Route::resource('sections', SectionController::class);
+    Route::resource('sessions', StudentSessionController::class);
+
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

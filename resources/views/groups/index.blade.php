@@ -27,16 +27,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($groups as $groups)
+                        @forelse($groups as $group)
                             <tr>
-                                <td>{{ $groups->id }}</td>
-                                <td>{{ $groups->name }}</td>
+                                <td>{{ $group->id }}</td>
+                                <td>{{ $group->name }}</td>
 
                                 <td>
-                                    <a href="{{ route('groups.edit', $groups) }}" class="btn btn-sm btn-warning">
+                                    <a href="{{ route('groups.edit', $group) }}" class="btn btn-sm btn-warning">
                                         <i class="bi bi-pencil"></i>
                                     </a>
-                                    <form action="{{ route('groups.destroy', $groups) }}" method="POST" class="d-inline"
+                                    <form action="{{ route('groups.destroy', $group) }}" method="POST" class="d-inline"
                                         onsubmit="return confirm('Delete this groups?')">
                                         @csrf @method('DELETE')
                                         <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
@@ -51,7 +51,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="card-footer">{{ $groups->links() }}</div>
+            <!-- <div class="card-footer">{{ $groups->links() }}</div> -->
         </section>
     </div>
 @endsection

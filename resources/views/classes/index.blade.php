@@ -21,11 +21,8 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>ID</th>
                             <th>Class</th>
-                            <th>Section</th>
-                            <th>Teacher</th>
-                            <th>Students</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -34,9 +31,6 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $class->name }}</td>
-                                <td>{{ $class->section ?? '-' }}</td>
-                                <td>{{ $class->teacher->name ?? 'Not Assigned' }}</td>
-                                <td><span class="badge badge-info">{{ $class->students->count() }}</span></td>
                                 <td>
                                     <a href="{{ route('classes.edit', $class) }}" class="btn btn-sm btn-warning">
                                         <i class="bi bi-pencil"></i>

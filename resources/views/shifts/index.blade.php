@@ -22,7 +22,10 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Shift Name</th>
+                            <th>Name</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -31,6 +34,15 @@
                             <tr>
                                 <td>{{ $loop->iteration + ($shifts->currentPage() - 1) * $shifts->perPage() }}</td>
                                 <td>{{ $shift->name }}</td>
+                                <td>{{ $shift->start_time }}</td>
+                                <td>{{ $shift->end_time }}</td>
+                                <td>
+                                    @if($shift->is_active)
+                                        <span class="badge badge-success">Active</span>
+                                    @else
+                                        <span class="badge badge-secondary">Inactive</span>
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="{{ route('shifts.show', $shift) }}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>

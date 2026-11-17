@@ -10,10 +10,18 @@ class Student extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'name',
-        'class_id',
-        'roll_number',
+        'gender',
+        'religion',
+        'birth_certificate',
+        'photo',
+        'blood_group',
+        'father_name',
+        'father_profession',
+        'father_phone',
+        'mother_name',
+        'mother_profession',
+        'mother_phone',
         'guardian_name',
         'guardian_phone',
         'date_of_birth',
@@ -24,13 +32,15 @@ class Student extends Model
         'date_of_birth' => 'date',
     ];
 
-    public function user()
+
+
+    public function enrollments()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(StudentEnrollment::class);
     }
 
-    public function classRoom()
+    public function enrollment()
     {
-        return $this->belongsTo(ClassRoom::class, 'class_id');
+        return $this->hasOne(StudentEnrollment::class)->latestOfMany();
     }
 }
