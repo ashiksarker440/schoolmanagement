@@ -33,48 +33,48 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
                 <a class="nav-link" href="{{route('students.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
                     <span class="nav-text">Students</span>
                 </a>
                 <a class="nav-link" href="{{route('classes.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-easel" aria-hidden="true"></i></span>
                     <span class="nav-text">Classes</span>
                 </a>
                 <a class="nav-link" href="{{route('teachers.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-person-workspace" aria-hidden="true"></i></span>
                     <span class="nav-text">Teachers</span>
                 </a>
                 <a class="nav-link" href="{{route('departments.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
                     <span class="nav-text">Departments</span>
                 </a>
                 <a class="nav-link" href="{{route('designations.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-award" aria-hidden="true"></i></span>
                     <span class="nav-text">Designations</span>
                 </a>
                 <a class="nav-link" href="{{route('groups.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-collection" aria-hidden="true"></i></span>
                     <span class="nav-text">Groups</span>
                 </a>
                 <a class="nav-link" href="{{route('sections.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-list-columns" aria-hidden="true"></i></span>
                     <span class="nav-text">Sections</span>
                 </a>
                 <a class="nav-link" href="{{route('shifts.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></span>
                     <span class="nav-text">Shifts</span>
                 </a>
 
                 <a class="nav-link" href="{{route('sessions.index')}}">
-                    <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                    <span class="nav-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></span>
                     <span class="nav-text">Sessions</span>
                 </a>
             </nav>
 
             <div class="sidebar-user">
                 <img class="avatar-img avatar-md sidebar-user-avatar" src="../assets/images/avatar/avatar.jpg"
-                    alt="Admin Hasan">
-                <strong>Admin Hasan</strong>
+                    alt="School Admin">
+                <strong>School Admin</strong>
                 <small>Active Workspace</small>
             </div>
 
