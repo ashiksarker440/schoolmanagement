@@ -56,7 +56,7 @@ class TeacherController extends Controller
         ]);
 
         DB::transaction(function () use ($validated, $request) {
-            // 1. User তৈরি
+            
             $user = User::create([
                 'name' => $validated['name'],
                 'email' => $validated['email'],
@@ -71,7 +71,7 @@ class TeacherController extends Controller
                 $request->photo->storeAs('teachers', $photoName, 'public');
             }
 
-            // 3. Teacher তৈরি
+            // 3. Teacher 
             Teacher::create([
                 'user_id' => $user->id,
                 'name' => $validated['name'],
@@ -94,7 +94,6 @@ class TeacherController extends Controller
 
     public function show(Teacher $teacher)
     {
-        $teacher->load('user', 'classes');
         return view('teachers.show', compact('teacher'));
     }
 

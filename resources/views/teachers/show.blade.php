@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.master')
 @section('title', 'Teachers Details')
 
 @section('content')
@@ -70,23 +70,6 @@
                         <dt class="col-sm-3">Address</dt>
                         <dd class="col-sm-9">{{ $teacher->address ?? '-' }}</dd>
                     </dl>
-                </div>
-            </div>
-
-            {{-- Assigned Classes --}}
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Assigned Classes ({{ $teacher->classes->count() }})</h3>
-                </div>
-                <div class="card-body">
-                    @forelse($teacher->classes as $class)
-                        <span class="badge badge-info p-2 mb-2">
-                            <i class="fas fa-chalkboard"></i>
-                            {{ $class->name }} {{ $class->section }}
-                        </span>
-                    @empty
-                        <p class="text-muted mb-0">No classes assigned yet.</p>
-                    @endforelse
                 </div>
             </div>
 

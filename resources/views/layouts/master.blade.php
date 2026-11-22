@@ -48,6 +48,10 @@
                     <span class="nav-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
                     <span class="nav-text">Departments</span>
                 </a>
+                <a class="nav-link" href="{{route('attendances.index')}}">
+                    <span class="nav-icon"><i class="bi bi-calendar-check" aria-hidden="true"></i></span>
+                    <span class="nav-text">Attendances</span>
+                </a>
                 <a class="nav-link" href="{{route('designations.index')}}">
                     <span class="nav-icon"><i class="bi bi-award" aria-hidden="true"></i></span>
                     <span class="nav-text">Designations</span>
