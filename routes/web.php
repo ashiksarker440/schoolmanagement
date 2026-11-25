@@ -12,40 +12,44 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\StudentSessionController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\FeeCategoryController;
+use App\Http\Controllers\FeeController;
+use App\Http\Controllers\FeePaymentController;
+
 
 Route::middleware(['auth'])->group(function () {
 
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
     // Class
     Route::resource('classes', ClassRoomController::class);
-
     // Students
     Route::resource('students', StudentController::class);
-
     // Teachers
     Route::resource('teachers', TeacherController::class);
-
     // Departments
     Route::resource('departments', DepartmentController::class);
-
     // Designations
     Route::resource('designations', DesignationController::class);
-
     // Shifts
     Route::resource('shifts', ShiftController::class);
-
     // Groups
     Route::resource('groups', GroupController::class);
-
     // Sections
     Route::resource('sections', SectionController::class);
-
     // Student Sessions
     Route::resource('sessions', StudentSessionController::class);
-
+    // Fee Categories
+    Route::resource('fee-categories', FeeCategoryController::class);
+    // Fees
+    Route::get('/fees/categories/{category}/amount', [FeeController::class, 'categoryAmount'])
+        ->name('fees.categories.amount');
+    Route::resource('fees', FeeController::class);
+    // Fee Payments
+    // Fee Payments
+    Route::resource('fee-payments', FeePaymentController::class)
+        ->parameters(['fee-payments' => 'payment']);
 
     // ==================================
     // Attendance AJAX Routes

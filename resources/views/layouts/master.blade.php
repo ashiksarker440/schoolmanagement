@@ -18,11 +18,11 @@
 
         <aside class="admin-sidebar" id="adminSidebar" aria-label="Main navigation">
             <div class="sidebar-header">
-                <a class="brand-mark" href="{{route('dashboard')}}" aria-label="adminHMD dashboard">
+                <a class="brand-mark" href="{{route('dashboard')}}" aria-label="School Management">
                     <span class="brand-icon"><i class="bi bi-grid-1x2-fill" aria-hidden="true"></i></span>
                     <span class="brand-copy">
-                        <span class="brand-title">adminHMD</span>
-                        <span class="brand-subtitle">Admin Template</span>
+                        <span class="brand-title">School</span>
+                        <span class="brand-subtitle">Management</span>
                     </span>
                 </a>
             </div>
@@ -72,6 +72,19 @@
                 <a class="nav-link" href="{{route('sessions.index')}}">
                     <span class="nav-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></span>
                     <span class="nav-text">Sessions</span>
+                </a>
+                <a class="nav-link" href="{{route('fees.index')}}">
+                    <span class="nav-icon"><i class="bi bi-cash-stack" aria-hidden="true"></i></span>
+                    <span class="nav-text">Fees</span>
+                </a>
+
+                <a class="nav-link" href="{{route('fee-categories.index')}}">
+                    <span class="nav-icon"><i class="bi bi-tags" aria-hidden="true"></i></span>
+                    <span class="nav-text">Fee Categories</span>
+                </a>
+                <a class="nav-link" href="{{route('fee-payments.index')}}">
+                    <span class="nav-icon"><i class="bi bi-receipt" aria-hidden="true"></i></span>
+                    <span class="nav-text">Fee Payments</span>
                 </a>
             </nav>
 
@@ -166,7 +179,7 @@
 
             <footer class="admin-footer">
                 <div class="container-fluid px-3 px-lg-4">
-                    <span>Copyright 2026 adminHMD. <br> Developed by <a target="_blank" class="fw-bold text-success"
+                    <span>School Management . <br> Developed by <a target="_blank" class="fw-bold text-success"
                             href="https://github.com/HasanMahmudDev">Md. Hasan Mahmud</a> • Distributed by <a
                             target="_blank" class="fw-bold text-success" href="https://themewagon.com">ThemeWagon</a>
                     </span>
@@ -178,6 +191,7 @@
 
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    @stack('scripts')
 </body>
 
 </html>
