@@ -86,6 +86,27 @@
                     <span class="nav-icon"><i class="bi bi-receipt" aria-hidden="true"></i></span>
                     <span class="nav-text">Fee Payments</span>
                 </a>
+                <a class="nav-link" href="{{route('subjects.index')}}">
+                    <span class="nav-icon"><i class="bi bi-book" aria-hidden="true"></i></span>
+                    <span class="nav-text">Subjects</span>
+                </a>
+                <a class="nav-link" href="{{route('exams.index')}}">
+                    <span class="nav-icon"><i class="bi bi-journal-text" aria-hidden="true"></i></span>
+                    <span class="nav-text">Exams</span>
+                </a>
+                <a class="nav-link" href="{{route('exam-subjects.index')}}">
+                    <span class="nav-icon"><i class="bi bi-journals" aria-hidden="true"></i></span>
+                    <span class="nav-text">Exam Subjects</span>
+                </a>
+                <a class="nav-link" href="{{route('results.index')}}">
+                    <span class="nav-icon"><i class="bi bi-award" aria-hidden="true"></i></span>
+                    <span class="nav-text">Results</span>
+                </a>
+                <a class="nav-link" href="{{route('certificates.index')}}">
+                    <span class="nav-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span>
+                    <span class="nav-text">certificates</span>
+                </a>
+
             </nav>
 
             <div class="sidebar-user">

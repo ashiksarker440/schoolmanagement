@@ -15,7 +15,11 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\FeeCategoryController;
 use App\Http\Controllers\FeeController;
 use App\Http\Controllers\FeePaymentController;
-
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\ExamController;
+use App\Http\Controllers\ExamSubjectController;
+use App\Http\Controllers\ResultController;
+use App\Http\Controllers\CertificateController;
 
 Route::middleware(['auth'])->group(function () {
 
@@ -50,6 +54,16 @@ Route::middleware(['auth'])->group(function () {
     // Fee Payments
     Route::resource('fee-payments', FeePaymentController::class)
         ->parameters(['fee-payments' => 'payment']);
+
+    Route::resource('subjects', SubjectController::class);
+
+    Route::resource('exams', ExamController::class);
+
+    Route::resource('exam-subjects', ExamSubjectController::class);
+
+    Route::resource('results', ResultController::class);
+
+    Route::resource('certificates', CertificateController::class);
 
     // ==================================
     // Attendance AJAX Routes
